@@ -1,0 +1,92 @@
+# Настройки сервера
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# Настройки Spring
+spring:
+  # Настройки базы данных
+  datasource:
+    url: jdbc:postgresql://localhost:5433/files_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  # JPA настройки
+  jpa:
+    hibernate:
+      ddl-auto: validate  # validate, update, create, create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        show_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  # Flyway настройки для миграций БД
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+    table: flyway_schema_history
+
+  # Настройки приложения
+  application:
+    name: files-storage-service
+
+# Настройки Swagger/OpenAPI
+springdoc:
+  # Включить/выключить Swagger UI
+  api-docs:
+    enabled: true
+    path: /api-docs  # путь к OpenAPI документации в формате JSON
+
+  # Настройки Swagger UI
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html            # путь к Swagger UI
+    operations-sorter: method         # сортировка операций по HTTP методу (method, alpha)
+    tags-sorter: alpha                # сортировка тегов по алфавиту
+    try-it-out-enabled: true          # включить кнопку "Try it out"
+    filter: true                      # включить фильтр поиска
+    deep-linking: true                # включить глубокие ссылки
+    display-request-duration: true    # отображать время выполнения запроса
+
+  # Пакеты для сканирования контроллеров
+  packages-to-scan: com.storage.files.controller
+
+  # Пути для включения в документацию
+  paths-to-match: /**
+
+  # Настройки кэширования OpenAPI описания
+  cache:
+    disabled: false  # включить кэширование
+
+  # Настройки модели
+  default-produces-media-type: application/json
+  default-consumes-media-type: application/json
+
+# Настройки логирования
+logging:
+  level:
+    root: INFO
+    com.storage.files: DEBUG
+    org.springframework.web: INFO
+    org.hibernate: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springdoc: DEBUG
+
+  file:
+    name: logs/application.log
+    max-size: 10MB
+    max-history: 10
+
+# Свои настройки приложения
+app:
+  storage:
+    upload-dir: ./uploads
+    max-file-size: 10MB
+    allowed-file-types: pdf,doc,docx,jpg,jpeg,png

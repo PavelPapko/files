@@ -1,0 +1,13 @@
+target/
+logs/
+*.log
+.git
+.gitignore
+README.md
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+src/test/
