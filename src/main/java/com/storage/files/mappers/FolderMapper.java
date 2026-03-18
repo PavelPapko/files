@@ -4,7 +4,7 @@ import com.storage.files.dto.FolderCreateDto;
 import com.storage.files.dto.FolderDto;
 import com.storage.files.dto.FolderTreeDto;
 import com.storage.files.dto.FolderUpdateDto;
-import com.storage.files.mappers.FolderEntity;
+import com.storage.files.models.FolderEntity;
 import org.mapstruct.*;
 
 import java.util.List;
