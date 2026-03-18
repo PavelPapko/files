@@ -1,7 +1,7 @@
 package com.storage.files.repository;
 
 
-import com.storage.files.repository.FolderEntity;
+import com.storage.files.models.FolderEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
