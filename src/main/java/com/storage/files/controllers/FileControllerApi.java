@@ -30,7 +30,9 @@ public interface FileControllerApi {
     ResponseEntity<FileDto> uploadFile(
             @Parameter(description = "Файл для загрузки") @RequestPart("file") MultipartFile file,
             @Parameter(description = "Описание файла") @RequestParam(required = false) String description,
-            @Parameter(description = "ID папки") @RequestParam(required = false) Long folderId);
+            @Parameter(description = "ID папки") @RequestParam(required = false) Long folderId,
+            @Parameter(description = "ID пользователя") @RequestParam(required = false) Long userId);
+
 
     @Operation(summary = "Скачать файл", description = "Скачивает файл по ID")
     @ApiResponses(value = {

@@ -1,11 +1,11 @@
 package com.storage.files.controllers;
 
-import com.storage.files.UserControllerApi;
+import com.storage.files.controllers.UserControllerApi;
 import com.storage.files.dto.FileDto;
 import com.storage.files.dto.UserCreateDto;
 import com.storage.files.dto.UserDto;
 import com.storage.files.dto.UserUpdateDto;
-import com.storage.files.service.UserService;
+import com.storage.files.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -2,7 +2,7 @@ package com.storage.files.controllers;
 
 import com.storage.files.controllers.FolderControllerApi;
 import com.storage.files.dto.*;
-import com.storage.files.service.FolderService;
+import com.storage.files.services.FolderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

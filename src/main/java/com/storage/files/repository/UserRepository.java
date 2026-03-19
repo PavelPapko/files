@@ -1,7 +1,8 @@
 package com.storage.files.repository;
 
 
-import com.storage.files.repository.UserEntity;
+import com.storage.files.models.UserEntity;
+import com.storage.files.repository.UserRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -3,7 +3,7 @@ package com.storage.files.controllers;
 import com.storage.files.controllers.FileControllerApi;
 import com.storage.files.dto.FileDto;
 import com.storage.files.dto.FileUpdateDto;
-import com.storage.files.service.FileService;
+import com.storage.files.services.FileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
@@ -20,8 +20,8 @@ public class FileController implements FileControllerApi {
     private final FileService fileService;
 
     @Override
-    public ResponseEntity<FileDto> uploadFile(MultipartFile file, String description, Long folderId) {
-        FileDto uploadedFile = fileService.uploadFile(file, description, folderId);
+    public ResponseEntity<FileDto> uploadFile(MultipartFile file, String description, Long folderId, Long userId) {
+        FileDto uploadedFile = fileService.uploadFile(file, description, folderId, userId);
         return ResponseEntity.status(HttpStatus.CREATED).body(uploadedFile);
     }
 
